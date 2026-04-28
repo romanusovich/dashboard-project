@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <button class="open-sidebar">=</button>
-    <aside>
+    <aside class="">
         <button class="close-sidebar">x</button>
         <div class="month-selector">
             <h2>Period</h2>
@@ -38,8 +39,8 @@
             </ul>
         </nav>
     </aside>
-    <main id="main-content">
-        <div class="projects-content">
+    <main class="main-content">
+        <div class="projects-content active">
             <div class="content-header">
                 <h1>Projects</h1>
                 <div class="projects-content-buttons">
@@ -81,7 +82,7 @@
                 </tbody>
             </table>
             <div class="projects-total-income">
-                <h3>Total Estimated Income: <span id="total-income">0</span></h3> /* .negative-income | .positive-income */
+                <h3>Total Estimated Income: <span class="total-income">0</span></h3>
             </div>
         </div>
         <div class="employees-content">

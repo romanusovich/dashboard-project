@@ -1,0 +1,93 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+aside {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    transition: left 0.3s ease;
+}
+
+aside.active {
+    left: 0;
+}
+
+.open-sidebar, .close-sidebar {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.month-selector {
+    margin-top: 20px;
+}
+
+.month-selector h2 {
+    margin-bottom: 10px;
+}
+
+.month-selector select {
+    width: 100%;
+    padding: 5px;
+}
+
+.main-content {
+    padding: 20px;
+    flex: 1;
+}
+
+aside.active + .main-content {
+    margin-left: 250px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.projects-content, .employees-content {
+    display: none;
+}
+
+.projects-content.active, .employees-content.active {
+    display: block;
+}
+
+.add-project-popup, .add-employee-popup, .seed-data-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+}
+
+.add-project-popup.active, .add-employee-popup.active, .seed-data-popup.active {
+    display: block;
+}
