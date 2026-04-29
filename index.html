@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <button class="open-sidebar active">→</button>
-    <aside class="">
-        <button class="close-sidebar ">x</button>
+    <button class="open-sidebar ">→</button>
+    <aside class="active">
+        <button class="close-sidebar active">x</button>
         <div class="month-selector">
             <h3>Period</h3>
             <select id="month-select">
@@ -34,8 +34,8 @@
         </div>
         <nav>
             <ul>
-                <li class="active">Projects</li>
-                <li>Employees</li>
+                <li class="projects-switch active">Projects</li>
+                <li class="employees-switch">Employees</li>
             </ul>
         </nav>
     </aside>
@@ -221,7 +221,7 @@
             </div>
         </form>
     </div>
-    <div class="seed-data-popup active">
+    <div class="seed-data-popup ">
         <div class="seed-data-header">
             <h2>Seed Data from Month</h2>
             <button class="close-seed-data">x</button>
@@ -254,5 +254,6 @@
             </table>
         </div>
     </div>
+    <script src="js/index.js"></script>
 </body>
 </html>
