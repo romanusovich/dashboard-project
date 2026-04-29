@@ -7,16 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <button class="open-sidebar">=</button>
+    <button class="open-sidebar active">→</button>
     <aside class="">
-        <button class="close-sidebar">x</button>
+        <button class="close-sidebar ">x</button>
         <div class="month-selector">
-            <h2>Period</h2>
-            <select id="year-select">
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-            </select>
+            <h3>Period</h3>
             <select id="month-select">
                 <option value="0">January</option>
                 <option value="1">February</option>
@@ -31,10 +26,15 @@
                 <option value="10">November</option>
                 <option value="11">December</option>
             </select>
+            <select id="year-select">
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+            </select>
         </div>
         <nav>
             <ul>
-                <li>Projects</li>
+                <li class="active">Projects</li>
                 <li>Employees</li>
             </ul>
         </nav>
@@ -78,11 +78,24 @@
                     </tr>
                 </thead>
                 <tbody class="projects-table-body">
-
+                    <tr>
+                        <td>asd</td>
+                        <td>asd</td>
+                        <td>123</td>
+                        <td>0/5</td>
+                        <td>-</td>
+                        <td class="positive-income">0.00$</td>
+                        <td>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="projects-total-income">
-                <h3>Total Estimated Income: <span class="total-income">0</span></h3>
+                <h3>Total Estimated Income: 
+                    <span class="total-income negative-income">$-500.00</span>
+                    <span class="bench-payments">(Bench payments: $500.00)</span>
+                </h3>
             </div>
         </div>
         <div class="employees-content">
@@ -136,12 +149,27 @@
                     </tr>
                 </thead>
                 <tbody class="employees-table-body">
-
+                    <tr>
+                        <td>asd</td>
+                        <td>asd</td>
+                        <td>25</td>
+                        <td>Junior</td>
+                        <td>$1000</td>
+                        <td>$500.00</td>
+                        <td>-</td>
+                        <td class="negative-income">$-500.00</td>
+                        <td class="action-buttons">
+                            <button class="availability">Availability</button>
+                            <button class="assign">Assign</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
                 </tbody>
+            </table>
         </div>
     </main>
-    <div class="add-project-popup">
-        <h2>Add new project</h2>
+    <div class="add-project-popup ">
+        <h2>Add New Project</h2>
         <form class="add-project-form">
             <label for="projectName">Project Name: *</label>
             <input type="text" id="projectName" name="projectName" minlength="3" pattern="[A-Za-z0-9\s]+" title="Project name must be at least 3 characters" required>
@@ -161,7 +189,7 @@
             </div>
         </form>
     </div>
-    <div class="add-employee-popup">
+    <div class="add-employee-popup ">
         <h2>Add New Employee</h2>
         <form class="add-employee-form">
             <label for="name">Name: *</label>
@@ -193,7 +221,7 @@
             </div>
         </form>
     </div>
-    <div class="seed-data-popup">
+    <div class="seed-data-popup active">
         <div class="seed-data-header">
             <h2>Seed Data from Month</h2>
             <button class="close-seed-data">x</button>
@@ -212,7 +240,16 @@
                     </tr>
                 </thead>
                 <tbody class="seed-data-table-body">
-
+                    <tr>
+                        <td>2026</td>
+                        <td>January</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>$-7540.83</td>
+                        <td class="action-buttons">
+                            <button class="seed">Seed</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
