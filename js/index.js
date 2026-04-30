@@ -48,24 +48,39 @@ const seedPopup = document.querySelector('.seed-data-popup');
 
 addProjectBtn.addEventListener('click', () => {
     projectPopup.classList.add('active');
+    document.body.classList.add('active');
 });
 
 cancelProjectBtn.addEventListener('click', () => {
     projectPopup.classList.remove('active');
+    document.body.classList.remove('active');
 });
 
 addEmployeeBtn.addEventListener('click', () => {
     employeePopup.classList.add('active');
+    document.body.classList.add('active');
 });
 
 cancelEmployeeBtn.addEventListener('click', () => {
     employeePopup.classList.remove('active');
+    document.body.classList.remove('active');
 });
 
 seedProjectBtn.addEventListener('click', () => {
     seedPopup.classList.add('active');
+    document.body.classList.add('active');
 });
 
 closeSeedProjectBtn.addEventListener('click', () => {
     seedPopup.classList.remove('active');
+    document.body.classList.remove('active');
+});
+
+const popupBackdrop = document.querySelector('.popup-backdrop');
+
+popupBackdrop.addEventListener('click', (e) => {
+    projectPopup.classList.remove('active');
+    employeePopup.classList.remove('active');
+    seedPopup.classList.remove('active');
+    document.body.classList.remove('active');
 });
