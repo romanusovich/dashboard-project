@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="open-sidebar">→</button>
+    <aside class="active">
+        <button class="close-sidebar active">x</button>
+        <div class="month-selector">
+            <h3>Period</h3>
+            <select id="month-select">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+            <select id="year-select">
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+            </select>
+        </div>
+        <nav>
+            <ul>
+                <li class="projects-switch active">Projects</li>
+                <li class="employees-switch">Employees</li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <section class="projects-content active">
+            <div class="content-header">
+                <h1>Projects</h1>
+                <div class="projects-content-buttons">
+                    <button class="add-project">+ Add Project</button>
+                    <button class="seed-project">Seed Data</button>
+                </div>
+            </div>
+            <table class="projects-table">
+                <thead>
+                    <tr>
+                        <th class="sortable filterable" data-sort="companyName" data-filter="companyName">
+                            Company Name
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable filterable" data-sort="projectName" data-filter="projectName">
+                            Project Name
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable" data-sort="budget">
+                            Budget
+                            <span>⇅</span>
+                        </th>
+                        <th class="sortable" data-sort="employeeCapacity">
+                            Employee Capacity
+                            <span>⇅</span>
+                        </th>
+                        <th>Employees</th>
+                        <th class="sortable" data-sort="estimatedIncome">
+                            Estimated Income
+                            <span>⇅</span>
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="projects-table-body">
+                    
+                </tbody>
+            </table>
+            <div class="projects-total-income">
+                <h3>Total Estimated Income: 
+                    <span class="total-income negative-income">$-500.00</span>
+                    <span class="bench-payments">(Bench payments: $500.00)</span>
+                </h3>
+            </div>
+        </section>
+        <section class="employees-content">
+            <div class="content-header">
+                <h1>Employees</h1>
+                <div class="employees-content-buttons">
+                    <button class="add-employee">+ Add Employee</button>
+                </div>
+            </div>
+            <table class="employees-table">
+                <thead>
+                    <tr>
+                        <th class="sortable filterable" data-sort="name" data-filter="name">
+                            Name
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable filterable" data-sort="surname" data-filter="surname">
+                            Surname
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable" data-sort="age">
+                            Age
+                            <span>⇅</span>
+                        </th>
+                        <th class="sortable filterable" data-sort="position" data-filter="position">
+                            Position
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable" data-sort="salary">
+                            Salary
+                            <span>⇅</span>
+                        </th>
+                        <th class="sortable filterable" data-sort="estimatedPayment" data-filter="estimatedPayment">
+                            Estimated Payment
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable filterable" data-sort="project" data-filter="project">
+                            Project
+                            <span>⇅</span>
+                            <span>⌕</span>
+                        </th>
+                        <th class="sortable" data-sort="projectedIncome">
+                            Projected Income
+                            <span>⇅</span>
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="employees-table-body">
+                    
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div class="popup-backdrop"></div>
+    <div class="add-project-popup">
+        <h2>Add New Project</h2>
+        <form class="add-project-form">
+            <label for="projectName">Project Name: *</label>
+            <input type="text" id="projectName" name="projectName" minlength="3" pattern="[A-Za-z0-9\s]+" title="Project name must be at least 3 characters" required>
+                
+            <label for="companyName">Company Name: *</label>
+            <input type="text" id="companyName" name="companyName" minlength="2" pattern="[A-Za-z0-9\s]+" title="Company name must be at least 2 characters" required>
+
+            <label for="budget">Budget: *</label>
+            <input type="number" id="budget" name="budget" min="0.01" step="0.01" title="Budget must be greater than 0" required>
+
+            <label for="employeeCapacity">Employee Capacity: *</label>
+            <input type="number" id="employeeCapacity" name="employeeCapacity" min="1" step="1" title="Employee capacity must be at least 1" required>
+
+            <div class="form-buttons">
+                <button type="submit" class="submit-project">Add Project</button>
+                <button type="button" class="cancel-add-project">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="add-employee-popup">
+        <h2>Add New Employee</h2>
+        <form class="add-employee-form">
+            <label for="name">Name: *</label>
+            <input type="text" id="name" name="name" minlength="3" pattern="[A-Za-z\s]+" title="Name must be at least 3 characters and contain only letters" required>
+
+            <label for="surname">Surname: *</label>
+            <input type="text" id="surname" name="surname" minlength="3" pattern="[A-Za-z\s]+" title="Surname must be at least 3 characters and contain only letters" required>
+
+            <label for="date-of-birth">Date of Birth: *</label>
+            <input type="date" id="dateOfBirth" name="date-of-birth" title="Date of birth is required" required>
+
+            <label for="position">Position: *</label>
+            <select id="position" name="position" required>
+                <option value="">Select Position</option>
+                <option value="Junior">Junior</option>
+                <option value="Middle">Middle</option>
+                <option value="Senior">Senior</option>
+                <option value="Lead">Lead</option>
+                <option value="Architect">Architect</option>
+                <option value="BO">BO</option>
+            </select>
+
+            <label for="salary">Salary: *</label>
+            <input type="number" id="salary" name="salary" min="0.01" step="0.01" title="Salary must be greater than 0" required>
+
+            <div class="form-buttons">
+                <button type="submit" class="submit-employee">Add Employee</button>
+                <button type="button" class="cancel-add-employee">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="seed-data-popup">
+        <div class="seed-data-header">
+            <h2>Seed Data from Month</h2>
+            <button class="close-seed-data">x</button>
+        </div>
+        <div class="seed-data-content">
+            <p>Select a month to copy its data to the current month </p>
+            <table class="seed-data-table">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Month</th>
+                        <th>Projects</th>
+                        <th>Employees</th>
+                        <th>Total Est. Income</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="seed-data-table-body">
+                    <tr>
+                        <td>2026</td>
+                        <td>January</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>$-7540.83</td>
+                        <td class="action-buttons">
+                            <button class="seed">Seed</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/add.js"></script>
+</body>
+</html>
