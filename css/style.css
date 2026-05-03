@@ -132,7 +132,7 @@ aside > nav > ul > li.active {
     border-bottom: 1px solid var(--main-color);
 }
 
-.add-project, .seed-project, .add-employee {
+.add-project, .seed-project, .add-employee, .submit-project, .submit-employee {
     padding: 10px 15px;
     border: none;
     border-radius: 10px;

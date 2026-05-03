@@ -40,7 +40,7 @@
         </nav>
     </aside>
     <main class="main-content">
-        <div class="projects-content active">
+        <section class="projects-content active">
             <div class="content-header">
                 <h1>Projects</h1>
                 <div class="projects-content-buttons">
@@ -97,8 +97,8 @@
                     <span class="bench-payments">(Bench payments: $500.00)</span>
                 </h3>
             </div>
-        </div>
-        <div class="employees-content">
+        </section>
+        <section class="employees-content">
             <div class="content-header">
                 <h1>Employees</h1>
                 <div class="employees-content-buttons">
@@ -166,7 +166,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </section>
     </main>
     <div class="popup-backdrop"></div>
     <div class="add-project-popup">
@@ -185,7 +185,7 @@
             <input type="number" id="employeeCapacity" name="employeeCapacity" min="1" step="1" title="Employee capacity must be at least 1" required>
 
             <div class="form-buttons">
-                <button type="submit" class="add-project">Add Project</button>
+                <button type="submit" class="submit-project">Add Project</button>
                 <button type="button" class="cancel-add-project">Cancel</button>
             </div>
         </form>
@@ -217,7 +217,7 @@
             <input type="number" id="salary" name="salary" min="0.01" step="0.01" title="Salary must be greater than 0" required>
 
             <div class="form-buttons">
-                <button type="submit" class="add-employee">Add Employee</button>
+                <button type="submit" class="submit-employee">Add Employee</button>
                 <button type="button" class="cancel-add-employee">Cancel</button>
             </div>
         </form>
@@ -256,5 +256,6 @@
         </div>
     </div>
     <script src="js/index.js"></script>
+    <script src="js/add.js"></script>
 </body>
 </html>
